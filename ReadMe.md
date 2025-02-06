@@ -1,0 +1,1 @@
+Estudos de Python. Os materiais aqui, são do curso "Python Base", da Linux Tips. 
