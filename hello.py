@@ -1,3 +1,6 @@
+#!/usr/bin/env python3
+# -*- coding: utf-8 -*-
+
 """Hello Word Multi Linguas
 
 Dependendo da linguagem configurada no ambiente o 
@@ -15,21 +18,23 @@ Execução:
 """
 __version__ = "0.0.1"
 __author__ = "Rafael Pereira"
-__License__ = "Unlicense"
+__license__ = "Unlicense"
 
-#Biblioteca python importada para interagir com as variaveis de ambiente do Sistema Operacional.
+# Biblioteca python importada para interagir com as variaveis de ambiente do Sistema Operacional.
 import os 
 
-current_language = os.getenv("LANG", "en_US")[:5]
+# Obtém o idioma do sistema, removendo possíveis .UTF-8 e convertendo para minúsculas
+lang = os.getenv("LANG", "en_US").split('.')[0][:5].lower()
 
-msg = "Hello,Word!"
+# Define a mensagem padrão em inglês
+msg = "Hello, World!"  # Corrigido a vírgula (adicionado espaço)
 
-if current_language == "pt_BR":
-                msg = "Olá, Mundo!"
-elif current_language == "it_IT":     
-                msg = "Ciao,Mondo!"    
-elif current_language == "es_SP":                 
-            msg = "Hola,Mundo!" 
+# Verifica o idioma e altera a mensagem (comparando em minúsculas)
+if lang == "pt_br":
+    msg = "Olá, Mundo!"
+elif lang == "it_it":     
+    msg = "Ciao, Mondo!"  # Adicionado espaço após a vírgula   
+elif lang == "es_es":                 
+    msg = "Hola, Mundo!"  # Corrigido "es_SP" para "es_ES" (padrão espanhol)
                 
 print(msg)
- 
